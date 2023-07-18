@@ -44,7 +44,7 @@ COPY package.json yarn.lock ./
 # 安装项目依赖
 RUN yarn install
 
-复制其他文件
+# 复制其他文件
 COPY ./public ./public
 COPY ./.next/standalone ./
 COPY ./.next/static ./.next/static
