@@ -47,11 +47,12 @@ COPY . .
 RUN yarn build
 
 # 复制构建后的文件
-COPY ./public ./public
-COPY ./node_modules ./node_modules
-COPY ./.next/standalone ./
-COPY ./.next/static ./.next/static
-COPY ./.next/server ./.next/server
+# COPY ./public ./public
+# COPY ./node_modules ./node_modules
+# COPY ./.next/standalone ./
+# COPY ./.next/static ./.next/static
+# COPY ./.next/server ./.next/server
+COPY .next ./.next
 
 ENV BASE_URL=http://aichat-admin:8080
 
