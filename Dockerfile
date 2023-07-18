@@ -32,6 +32,11 @@
 # 需要先在本地执行yarn install && yarn build
 FROM node:18-alpine
 
+# 安装项目依赖
+RUN yarn install
+# 构建项目
+RUN yarn build
+
 WORKDIR /app
 
 COPY package.json yarn.lock ./
@@ -39,11 +44,11 @@ COPY package.json yarn.lock ./
 # 安装项目依赖
 RUN yarn install
 
-# 复制其他文件
-# COPY ./public ./public
-# COPY ./.next/standalone ./
-# COPY ./.next/static ./.next/static
-# COPY ./.next/server ./.next/server
+复制其他文件
+COPY ./public ./public
+COPY ./.next/standalone ./
+COPY ./.next/static ./.next/static
+COPY ./.next/server ./.next/server
 
 # 构建项目
 RUN yarn build
