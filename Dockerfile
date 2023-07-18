@@ -52,7 +52,6 @@ RUN yarn build
 # COPY ./.next/standalone ./
 # COPY ./.next/static ./.next/static
 # COPY ./.next/server ./.next/server
-COPY .next ./.next
 
 ENV BASE_URL=http://aichat-admin:8080
 
